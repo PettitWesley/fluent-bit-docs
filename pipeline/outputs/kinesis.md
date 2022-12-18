@@ -67,7 +67,7 @@ The following AWS IAM permissions are required to use this plugin:
 }
 ```
 
-### Worker support
+### Worker Support
 
 Fluent Bit 1.7 adds a new feature called `workers` which enables outputs to have dedicated threads. This `kinesis_streams` plugin fully supports workers.
 
@@ -82,7 +82,7 @@ Example:
     workers 2
 ```
 
-If you enable a single worker, you are enabling a dedicated thread for your Kinesis output. We recommend starting with without workers, evaluating the performance, and then adding workers one at a time until you reach your desired/needed throughput. For most users, no workers or a single worker will be sufficient.
+If you enable a single worker, you are enabling a dedicated thread for your Kinesis output. As of Fluent Bit v1.9.0+ there is one worker enabled by default; to use zero workers you must explicitly set `workers 0`. We recommend starting with the default 1 worker, evaluating the performance and throughput, and then adding workers one at a time until you reach your desired/needed throughput. For most users, the single default worker will be sufficient.
 
 ### AWS for Fluent Bit
 
